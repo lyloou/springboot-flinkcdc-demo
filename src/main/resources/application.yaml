@@ -1,0 +1,19 @@
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: /data/log/springboot-flinkcdc-demo/
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+
+common:
+  cdc:
+    hostname: 127.0.0.1
+    port: 3406
+    username: flinkcdc_read
+    password: flinkcdc_read
+    item-list:
+      - database: cc_media_source
+        table-names: 'cc_movie_2018_0'
+        ignore-columns: created_time,modify_time
